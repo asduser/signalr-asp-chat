@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNet.SignalR.Core.ru</id>
+    <version>2.0.0</version>
+    <title>Русские ресурсы Microsoft ASP.NET SignalR Core</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/aspnetcomponent_rtw_RUS.htm</licenseUrl>
+    <projectUrl>http://www.asp.net/signalR</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Этот пакет содержит русские вспомогательные сборки для ASP.NET SignalR Core.</description>
+    <summary>Русские ресурсы для пакета Microsoft.AspNet.SignalR.Core</summary>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <language>ru</language>
+    <tags>Microsoft AspNet SignalR AspNetSignalR Core</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.SignalR.Core" version="[2.0.0]" />
+    </dependencies>
+  </metadata>
+</package>

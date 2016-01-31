@@ -1,0 +1,8 @@
+SignalR_app/bin/
+SignalR_app/obj/
+SignalR_app/*.dll
+*.pdb
+*.suo
+SignalR_app.sln.DotSettings.user
+SignalR_app.zip
+*.sdf

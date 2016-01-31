@@ -1,0 +1,44 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div class="main" style="margin:15px 0 0 0;">
+        @if (!Request.IsAuthenticated)
+        {
+            <div id="loginBlock">
+                Enter Your Name:<br />
+                <input id="txtUserName" type="text" />
+                <input id="btnLogin" type="submit" value="Join chat as a guest" />
+            </div>
+        }
+        @if (Request.IsAuthenticated)
+        {
+            <div id="loginBlock">
+                <input id="txtUserName" type="hidden" value="registered"/>
+                <input id="btnLogin" type="submit" value="Join chat as a registered user" />
+            </div>
+        }
+        <div id="chatBody" style="display:none;">
+            <div id="header"></div>
+            <div id="inputForm">
+                <input type="text" id="message" style="width:70%;" />
+                <input type="button" id="sendmessage" value="Send message" style="width:28%;" />
+            </div>
+            <div id="chatroom" style="height: 350px; overflow-y: scroll;border:1px solid #ccc;border-radius: 10px;margin:10px 0 0 0;padding:15px 0 0 20px;"></div>
+            <hr/>
+            <div id="chatusers">
+                <p>
+                    <span><b>Online:</b><span id="totalUsers" style="margin:0 0 0 10px;"></span> </span><br/>
+                    <span><b>User list:</b><span id="userList" style="margin:0 0 0 10px;"></span></span>
+                </p>
+            </div>
+        </div>
+        <input id="hdId" type="hidden" />
+        <input id="username" type="hidden" />
+    </div>
+</body>
+</html>

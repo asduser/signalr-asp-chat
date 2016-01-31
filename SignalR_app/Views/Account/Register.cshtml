@@ -1,0 +1,58 @@
+﻿@model SignalR_app.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Registration</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <h4>User registration</h4>
+        <hr />
+        @Html.ValidationSummary(false)
+
+        <div>
+            E-mail:
+            <div>
+                @Html.EditorFor(model => model.Email)
+            </div>
+        </div>
+
+        <div>
+            Name (displays UI only):
+            <div>
+                @Html.EditorFor(model => model.DisplayName)
+            </div>
+        </div>
+        
+        <p>
+            Gender:  <br />
+            @Html.DropDownListFor(model => model.Gender, ViewBag.Genders as SelectList)
+        </p>
+
+        <div>
+            Password:
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </div>
+
+        <div>
+            Confirm password:
+            <div>
+                @Html.EditorFor(model => model.PasswordConfirm)
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <input type="submit" value="Register" />
+            </div>
+        </div>
+    </div>
+}
