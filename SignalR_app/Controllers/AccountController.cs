@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using SignalR_app.Hubs;
 using SignalR_app.Models;
 
 namespace SignalR_app.Controllers
@@ -38,6 +39,7 @@ namespace SignalR_app.Controllers
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    SendRegisteredUserMessage("New user " + model.DisplayName + " was registered.");
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -97,6 +99,15 @@ namespace SignalR_app.Controllers
         {
             AuthenticationManager.SignOut();
             return RedirectToAction("Login");
+        }
+
+        private void SendRegisteredUserMessage(string message)
+        {
+            // get hub context
+            var context =
+                Microsoft.AspNet.SignalR.GlobalHost.ConnectionManager.GetHubContext<ChatHub>();
+            // send message
+            context.Clients.All.addMessage("Server status: ", message, "#0033ff");
         }
 
     }
