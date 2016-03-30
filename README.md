@@ -1,7 +1,6 @@
 # signalr-asp-chat
-My first familiarization with SignalR and using it with ASP.NET MVC.
 
-### What for
+### About
 
 If you need quick install the simple chat but you haven't time - it is a exactly what you need!
 
